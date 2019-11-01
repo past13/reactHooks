@@ -16,7 +16,11 @@ const AddMovie = () => {
 
     const addMovie = (e) => {
         e.preventDefault();
-        setMovies( prevMovies => [...prevMovies, {name: name, price: price}]);
+        let id = Math.max.apply(Math, movies.map(function(o) { 
+            return o.id + 1; 
+        }))
+
+        setMovies(prevMovies => [...prevMovies, {id: id, name: name, price: price}]);
     }
 
     return (
