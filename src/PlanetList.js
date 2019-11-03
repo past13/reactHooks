@@ -1,17 +1,16 @@
 import React, { useContext} from 'react';
 import { PlanetsContext } from './PlanetsContext';
 
-const PlanetsList = () => {
+const PlanetList = () => {
     const [planets] = useContext(PlanetsContext);
-    
+  
     return (
         <div>
-            
-            {planets.map(planet => (
-                console.log(planet)
+            {(planets.results || []).map(item => (
+                <div key={item.name}>{item.name}</div>
             ))}
         </div>
     );
 }
 
-export default PlanetsList;
+export default PlanetList;

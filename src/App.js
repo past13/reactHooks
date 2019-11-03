@@ -5,7 +5,9 @@ import { MovieProvider } from './MovieContext';
 import MovieList from './MovieList';
 import AddMovie from './AddMovie';
 
-import { Planets } from './PlanetsContext';
+import PlanetList from './PlanetList';
+
+import { PlanetsProvider } from './PlanetsContext';
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
       </div>
     </MovieProvider>
     <PlanetsProvider>
-      
+      <PlanetList />
     </PlanetsProvider>
     </div>
   );
