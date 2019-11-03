@@ -1,13 +1,17 @@
 import React from 'react';
 import './App.css';
-import { MovieProvider } from './MovieContext';
 
 import MovieList from './MovieList';
+import { MovieProvider } from './MovieContext';
 import AddMovie from './AddMovie';
 
-import PlanetList from './PlanetList';
+import LocationList from './LocationList';
+import { LocationsProvider } from './LocationContext';
+import AddLocation from './AddLocation';
 
-import { PlanetsProvider } from './PlanetsContext';
+import MaterialList from './MaterialList';
+import { MaterialsProvider } from './MaterialContext';
+import AddMaterial from './AddMaterial';
 
 function App() {
   return (
@@ -18,9 +22,14 @@ function App() {
         <MovieList />       
       </div>
     </MovieProvider>
-    <PlanetsProvider>
-      <PlanetList />
-    </PlanetsProvider>
+    <MaterialsProvider>
+      <AddMaterial />
+      <MaterialList />
+    </MaterialsProvider>
+    <LocationsProvider>
+      <AddLocation />
+      <LocationList />
+    </LocationsProvider>
     </div>
   );
 }

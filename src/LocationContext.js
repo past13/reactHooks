@@ -1,10 +1,10 @@
 import React, { useState, useEffect, createContext } from "react";
 
-export const PlanetsContext = createContext();
+export const LocationContext = createContext();
 
-export const PlanetsProvider = (props)  => {
+export const LocationsProvider = (props)  => {
   const  [hasError, setErrors] =  useState(false);
-  const  [planets, setPlanets ]= useState({});
+  const  [locations, setPlanets ]= useState({});
 
 
  async function fetchData() {
@@ -20,8 +20,8 @@ export const PlanetsProvider = (props)  => {
   });
 
   return (
-    <PlanetsContext.Provider value={[planets, setPlanets]}>
+    <LocationContext.Provider value={[locations, setPlanets]}>
         {props.children}
-    </PlanetsContext.Provider>
+    </LocationContext.Provider>
   )
 }
