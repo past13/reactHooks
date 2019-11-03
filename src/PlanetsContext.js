@@ -8,7 +8,7 @@ export const PlanetsProvider = (props)  => {
 
 
  async function fetchData() {
-      const res = await fetch("https://swapi.co/api/planets/");
+      const res = await fetch("http://localhost:5000/locations/");
       res
         .json()
         .then(res => setPlanets(res))

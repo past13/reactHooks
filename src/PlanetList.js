@@ -3,12 +3,12 @@ import { PlanetsContext } from './PlanetsContext';
 
 const PlanetList = () => {
     const [planets] = useContext(PlanetsContext);
-  
+    const planetList = Array.from(planets);
     return (
         <div>
-            {(planets.results || []).map(item => (
-                <div key={item.name}>{item.name}</div>
-            ))}
+            {planetList.map((item) => {
+                return <div key={item._id}>{item.name}</div>
+            })}
         </div>
     );
 }
